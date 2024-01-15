@@ -9,7 +9,7 @@ def get_current_weather():
 
     city = input('\nPlease enter your city:\n')
 
-    request_url =f'https://api.openweathermap.org/data/2.5/weather?&appid=f5461504430b76a5b6347ab29aab9e50&q={city}&units=metric'
+    request_url =f'https://api.openweathermap.org/data/2.5/weather?&appid={os.getenv('API_KEY')}&q={city}&units=metric'
 
     print(request_url)
     weather_data = requests.get(request_url).json()
